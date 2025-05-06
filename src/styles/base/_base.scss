@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+
+/*----------------------------------------------------
+
+	初期設定を行うファイルです。
+	デフォルトの設定を行う時以外、基本的に編集することはありません。
+
+----------------------------------------------------*/
+
+html {
+  font-size: .52083vw; /* 10px / 1920px * 100 */
+
+}
+
+body {
+  font-size: 15px;
+  color: #2c2c2c;
+}
+
+img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+sup {
+  font-size: 50%;
+  vertical-align: super;
+}
+
+a {
+  color: #f17700;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #f17700;
+}

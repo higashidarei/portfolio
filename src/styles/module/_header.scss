@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+@use '../lib/global' as g;
+
+.header {
+  // 削除してください
+  background: #333;
+  height: 8rem;
+  // 削除してください
+
+  position: relative;
+  z-index: 999;
+  &__hmbbtn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+}
+.header--clone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(0%);
+  transition: 0.25s;
+  &.hidden {
+    transform: translateY(-100%);
+  }
+  &.is-top {
+    transform: translateY(-100%) !important;
+  }
+}
