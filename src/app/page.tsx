@@ -1,8 +1,13 @@
+import MvText from "@/components/effects/MvText";
 
 export default function HomePage() {
   return (
     <main>
-      <h1>GSAP Animation</h1>
+      <div className="mv">
+        <div className="l-inner">
+          <MvText/>
+        </div>
+      </div>
     </main>
   );
 }

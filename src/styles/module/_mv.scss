@@ -3,4 +3,18 @@
 @use '../lib/global' as g;
 
 .mv {
+
+  &__ttl{
+    color: #fff;
+    font-size: 20rem;
+    text-align: center;
+  }
+}
+
+.animation-area path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1px;
+  stroke-dasharray: 1180px;
+  transition: fill 0.3s ease-in-out;
 }

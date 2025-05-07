@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+@use '../lib/global' as g;
 
 /*----------------------------------------------------
 
@@ -9,13 +9,26 @@
 ----------------------------------------------------*/
 
 html {
-  font-size: .52083vw; /* 10px / 1920px * 100 */
-
+  scroll-behavior: smooth;
+  font-size: 10px;
+  @media screen and (max-width: 1000px) {
+    font-size: 1vw; /* 10px / 1000px * 100 */
+  }
+  @include g.max-screen(g.$bp-sp) {
+    font-size: 2.66666667vw; /* 10px / 375px * 100 */
+  }
 }
 
 body {
-  font-size: 15px;
-  color: #2c2c2c;
+  background: g.$base-color;
+  color: g.$font-color;
+  font-size: #{g.$font-size-px}px;
+  font-size: #{g.$font-size-rem}rem;
+  font-family: g.$font-family;
+  line-height: g.$line-height;
+  @include g.max-screen(g.$bp-sp) {
+    font-size: 1.4rem;
+  }
 }
 
 img {
