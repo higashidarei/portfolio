@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect } from "react";
 
 export default function StarBackground() {
@@ -16,12 +15,26 @@ export default function StarBackground() {
       starEl.style.left = `${Math.random() * 100}%`;
       starEl.style.top = `${Math.random() * 100}%`;
       starEl.style.animationDelay = `${Math.random() * 10}s`;
+      starEl.style.position = "absolute";
       stars.appendChild(starEl);
     };
 
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 20; i++) {
       createStar();
     }
+
+    const handleMouseMove = (e) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX / innerWidth - 0.5) * 50;
+      const y = (e.clientY / innerHeight - 0.5) * 50;
+      stars.style.transform = `translate(${x}px, ${y}px)`;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   return null;

@@ -9,9 +9,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="ja">
       <body>
         <div className="stars-bg">
+        </div>
           <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
           <StarBackground />
-        </div>
       </body>
     </html>
   );
