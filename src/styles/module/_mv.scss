@@ -1,20 +1,61 @@
 @charset "utf-8";
 
-@use '../lib/global' as g;
+@use '../lib/global'as g;
 
 .mv {
 
-  &__ttl{
+  &__txt-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 60rem;
+    /* 高さは自由に調整 */
+
+  }
+
+  &__txt,
+  &__subtxt {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
     color: #fff;
-    font-size: 20rem;
-    text-align: center;
+    font-size: 18rem;
+    font-weight: bold;
+    letter-spacing: .05em;
+  }
+
+  &__txt {
+
+    span {
+      /* ここからアニメーション関係 */
+      transform: translateY(2em);
+      animation: textanimation 1s forwards;
+
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{($i * 0.2)}s;
+        }
+      }
+    }
+  }
+
+  &__subtxt {
+    opacity: 0;
+    /* 最初は非表示 */
+    transform: translateY(0);
+    /* 位置は固定 */
   }
 }
 
-.animation-area path {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 1px;
-  stroke-dasharray: 1180px;
-  transition: fill 0.3s ease-in-out;
+@keyframes textanimation {
+  0% {
+    transform: translateY(2em);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
