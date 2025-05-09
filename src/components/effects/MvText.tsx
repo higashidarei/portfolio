@@ -23,7 +23,7 @@ export default function MvText() {
       y: "150px",
       duration: 1.8,
       ease: "power2.inOut",
-    }, "<"); // ← 同時スタート
+    }, "<"); // h1Refと同時スタート
   }, []);
 
   return (

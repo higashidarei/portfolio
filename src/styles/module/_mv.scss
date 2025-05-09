@@ -11,8 +11,6 @@
     align-items: center;
     overflow: hidden;
     height: 60rem;
-    /* 高さは自由に調整 */
-
   }
 
   &__txt,
@@ -30,7 +28,7 @@
   &__txt {
 
     span {
-      /* ここからアニメーション関係 */
+      /* CSSアニメーション関係 */
       transform: translateY(2em);
       animation: textanimation 1s forwards;
 
@@ -44,9 +42,7 @@
 
   &__subtxt {
     opacity: 0;
-    /* 最初は非表示 */
     transform: translateY(0);
-    /* 位置は固定 */
   }
 }
 
