@@ -19,14 +19,14 @@ export default function StarBackground() {
       stars.appendChild(starEl);
     };
 
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= 25; i++) {
       createStar();
     }
 
     const handleMouseMove = (e) => {
       const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 50;
-      const y = (e.clientY / innerHeight - 0.5) * 50;
+      const x = (e.clientX / innerWidth - 0.5) * 70;
+      const y = (e.clientY / innerHeight - 0.5) * 70;
       stars.style.transform = `translate(${x}px, ${y}px)`;
     };
 

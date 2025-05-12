@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@use '../lib/global' as g;
+@use '../lib/global'as g;
 
 /*----------------------------------------------------
 
@@ -11,8 +11,139 @@
 
 	階層はルートクラスより、三階層までが基本
 	【例】
-	.top-sec .top-sec__ttl span {		
+	.top-sec .top-sec__ttl span {
 	}
 	※CSSに展開した場合
 
 ----------------------------------------------------*/
+
+.service {
+	padding: 20rem 0;
+
+	.swiper {
+		margin-left: 0;
+		margin-top: 8rem;
+		height: 30rem;
+	}
+
+	.swiper-slide {
+		width: 55%;
+
+		h3 {
+			font-size: 6rem
+		}
+
+		p {
+			font-size: 2rem;
+			padding-top: 3rem;
+		}
+	}
+}
+
+.works {
+	padding: 10rem 0;
+
+	&__wrap{
+		display: flex;
+	}
+
+	&__list-wrap {
+		position: relative;
+		width: 100%;
+		// height: 700px;
+	}
+
+	&__list {
+		position: absolute;
+		display: flex;
+		gap: 4rem;
+		width: max-content;
+		margin-top: 4rem;
+
+		li {
+			width: 32vw;
+			flex-shrink: 0;
+		}
+
+		&-img {
+			width: 100%;
+			height: 10rem;
+			background: #eee;
+		}
+	}
+}
+
+.contact {
+	padding-top: 10rem;
+
+	&__scroll-border {
+		position: relative;
+		transform: translateX(-50%);
+		left: 50%;
+		width: 10px;
+		height: 6rem;
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 1px;
+			height: 100%;
+			top: 0;
+			left: 0;
+			right: 0;
+			background: #fff;
+			margin: auto;
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			display: block;
+			width: .5rem;
+			height: .5rem;
+			left: 0;
+			right: 0;
+			background: #fff;
+			border-radius: 50%;
+			animation: scrollbar 1.5s ease-in-out infinite;
+			margin: auto;
+		}
+	}
+
+	&__scroll-txt {
+		position: relative;
+		font-size: 4rem;
+		text-align: center;
+	}
+
+	&__ttl {
+		font-size: 28rem;
+		font-weight: bold;
+		text-align: center;
+		line-height: 1;
+
+		a {
+			display: inline-block;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}
+
+@keyframes scrollbar {
+	0% {
+		bottom: 6rem;
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		bottom: -10px;
+		opacity: 0;
+	}
+}

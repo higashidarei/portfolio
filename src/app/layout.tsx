@@ -15,8 +15,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <div className="stars-bg">
-        </div>
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
         <StarBackground />
       </body>
