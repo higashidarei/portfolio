@@ -1,6 +1,6 @@
 import MvAnimation from "@/components/effects/MvAnimation";
-import ServiceSwiper from "@/components/ui/ServiceSwiper";
-import WorksSlide from "@/components/ui/WorksSlide";
+import ServiceSwiper from "@/sections/service/ServiceSwiper";
+import WorksSlide from "@/sections/works/WorksSlide";
 
 export default function HomePage() {
   return (
