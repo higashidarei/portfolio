@@ -14,10 +14,11 @@ export default function HomePage() {
 
       <section className="service">
         <div className="l-inner">
-          <h2 className="heading-A">Service</h2>
           <ServiceSwiper />
         </div>
       </section>
+
+      <div className="service-spacer" />
 
       <section className="works">
         <div className="l-inner">

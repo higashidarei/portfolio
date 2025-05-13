@@ -15,18 +15,18 @@ export default function WorksSlide() {
     // if (!wrapper || !list) return;
 
     gsap.to(list, {
-      x: () => -(list.scrollWidth - wrapper.clientWidth),
+      x: () => -(list.clientWidth - wrapper.clientWidth),
       ease: "none",
       scrollTrigger: {
         trigger: ".works",
         start: "top top",
-        end: () => `+=${list.scrollWidth - wrapper.clientWidth}`,
+        end: () => `+=${list.clientWidth - wrapper.clientWidth}`,
         scrub: true,
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
-        markers: true,
+        // markers: true,
       },
     });
 
