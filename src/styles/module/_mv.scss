@@ -4,7 +4,10 @@
 
 .mv {
   position: relative;
+  display: flex;
+  align-items: center;
   padding: 5rem 0;
+  height: 100vh;
 
   .circle{
     position: fixed;
