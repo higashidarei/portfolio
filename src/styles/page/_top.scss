@@ -29,37 +29,49 @@ main {
 // }
 
 .service {
-  position: relative;
-}
+	position: relative;
+	padding: 20rem 0 0;
 
-.service-pin-wrapper {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
+	.service-pin-wrapper {
+		position: relative;
+		height: 100vh;
+		overflow: hidden;
+	}
 
-.access-wrapper {
-  position: relative;
-  min-height: 100vh;
-}
+	&__list{
+		position: relative;
+		height: 100%;
+		// min-height: 100vh;
+	}
 
-.access-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 4rem;
-  box-sizing: border-box;
-}
+	&__item{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 4rem 0;
+		box-sizing: border-box;
 
-.heading-A {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+		h3{
+			font-size: 6rem;
+		}
+		p{
+			font-size: 2.4rem;
+		}
+	}
+
+	.dot{
+		width: 20px;
+		height: 20px;
+		background: red;
+		border-radius: 50%;
+		position: absolute;
+	}
 }
 
 
 .works {
-	padding: 10rem 0;
+	padding: 0 0 10rem 0;
 
 	&__wrap {
 		display: flex;

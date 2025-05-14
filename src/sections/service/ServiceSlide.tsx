@@ -1,27 +1,28 @@
-// components/ServiceSwiper.tsx
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import MotionPath from "@/sections/service/MotionPath";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const slides = [
   {
     title: "Web Development",
-    content: "テキストテキストテキストテキストテキストテキスト..."
+    content: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト"
   },
   {
     title: "Web Design",
-    content: "テキストテキストテキストテキストテキストテキスト..."
+    content: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト"
   },
   {
     title: "UI/UX Design",
-    content: "テキストテキストテキストテキストテキストテキスト..."
+    content: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト"
   }
 ];
 
-export default function ServiceSwiper() {
+export default function ServiceSlide() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const slidesRef = useRef<HTMLDivElement[]>([]);
 
@@ -29,7 +30,7 @@ export default function ServiceSwiper() {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    // 初期表示設定
+    // 初期表示：すべて非表示、最初だけ表示
     slidesRef.current.forEach((slide, i) => {
       gsap.set(slide, {
         position: "absolute",
@@ -41,16 +42,17 @@ export default function ServiceSwiper() {
       });
     });
 
-    // ScrollTrigger
+    // ScrollTrigger 全体設定
     ScrollTrigger.create({
       trigger: ".service",
       pin: wrapper,
       pinSpacing: true,
       start: "top top",
-      end: () => wrapper?.scrollHeight || window.innerHeight,
+      end: `+=${window.innerHeight * (slides.length - 1)}`,
       scrub: true,
       onUpdate: (self) => {
-        const index = Math.floor(self.progress * slides.length);
+        const rawIndex = self.progress * slides.length;
+        const index = Math.min(Math.floor(rawIndex), slides.length - 1);
         slidesRef.current.forEach((slide, i) => {
           gsap.to(slide, {
             autoAlpha: i === index ? 1 : 0,
@@ -59,6 +61,7 @@ export default function ServiceSwiper() {
           });
         });
       },
+
     });
 
     return () => ScrollTrigger.getAll().forEach(t => t.kill());
@@ -67,18 +70,23 @@ export default function ServiceSwiper() {
   return (
     <div className="service-pin-wrapper" ref={wrapperRef}>
       <h2 className="heading-A">Service</h2>
-      <div className="access-wrapper">
+      <ul className="service__list">
         {slides.map((s, i) => (
-          <div
-            className="access-slide"
+          <li
+            className="service__item"
             key={i}
             ref={(el) => el && (slidesRef.current[i] = el)}
           >
-            <h3>{s.title}</h3>
-            <p>{s.content}</p>
-          </div>
+            <div>
+              <h3>{s.title}</h3>
+              <p>{s.content}</p>
+            </div>
+            <div>
+              <MotionPath />
+            </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }
