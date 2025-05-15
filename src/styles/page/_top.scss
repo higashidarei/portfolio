@@ -41,7 +41,6 @@ main {
 	&__list{
 		position: relative;
 		height: 100%;
-		// min-height: 100vh;
 	}
 
 	&__item{
@@ -63,7 +62,7 @@ main {
 	.dot{
 		width: 20px;
 		height: 20px;
-		background: red;
+		background: #fff;
 		border-radius: 50%;
 		position: absolute;
 	}

@@ -25,7 +25,7 @@ export default function MotionPath() {
   return (
     <div>
       <svg width="400" height="200" viewBox="0 0 400 200">
-        <path id="myPath" d="M20,100 Q200,0 380,100 T760,100" fill="none" stroke="gray" />
+        <path id="myPath" d="M20,100 Q200,0 380,100 T760,100" fill="none" stroke="" />
       </svg>
 
       <div ref={dotRef} className="dot"></div>
