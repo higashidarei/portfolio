@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import gsap from "gsap";
+// font読み込み
 import { Noto_Serif_JP } from "next/font/google";
-
 const noto = Noto_Serif_JP({ subsets: ["latin"], weight: ["200", "400", "700"] });
 
 import "@/styles/style.scss";

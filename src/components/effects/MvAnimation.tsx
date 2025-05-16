@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import HoverDistortWrapper from "@/components/effects/HoverDistortWrapper";
 
 export default function MvAnimation() {
   const h1Ref = useRef(null);
@@ -12,6 +12,7 @@ export default function MvAnimation() {
   const circleRef = useRef(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline();
 
     // txt分離アニメーション
@@ -72,9 +73,11 @@ export default function MvAnimation() {
           Portfolio
         </p>
 
-        <div className="mv__item" ref={itemRef}>
-          <Image src="/images/mv-item.png" alt="" width={500} height={500} />
-        </div>
+        <HoverDistortWrapper>
+          <div className="mv__item" style={{ width: 300, height: 300 }}>
+            <img src="/images/mv-item.png" width={300} height={300} crossOrigin="anonymous" />
+          </div>
+        </HoverDistortWrapper>
       </div>
     </div>
   );
