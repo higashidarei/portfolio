@@ -7,3 +7,4 @@ package-lock.json
 /.next/
 /build
 next-env.d.ts
+/out
