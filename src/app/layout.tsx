@@ -1,7 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import gsap from "gsap";
-
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 import "@/styles/style.scss";
 import type { ReactNode } from "react";
 import ClientLayoutWrapper from "src/components/layout/ClientLayoutWrapper";
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className={inter.className}>
         <PageTransition />
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
         <StarBackground />
