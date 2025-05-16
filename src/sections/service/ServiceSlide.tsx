@@ -24,7 +24,7 @@ const slides = [
 
 export default function ServiceSlide() {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const slidesRef = useRef<HTMLDivElement[]>([]);
+  const slidesRef = useRef<HTMLLIElement[]>([]);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -75,7 +75,9 @@ export default function ServiceSlide() {
           <li
             className="service__item"
             key={i}
-            ref={(el) => el && (slidesRef.current[i] = el)}
+            ref={(el) => {
+              if (el) slidesRef.current[i] = el;
+            }}
           >
             <div>
               <h3>{s.title}</h3>
