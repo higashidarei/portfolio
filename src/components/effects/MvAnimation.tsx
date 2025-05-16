@@ -73,7 +73,7 @@ export default function MvAnimation() {
         </p>
 
         <div className="mv__item" ref={itemRef}>
-          <Image src="./images/mv-item.png" alt="" />
+          <Image src="/images/mv-item.png" alt="" width={500} height={500} />
         </div>
       </div>
     </div>
