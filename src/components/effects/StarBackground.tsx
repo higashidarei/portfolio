@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 export default function StarBackground() {
   useEffect(() => {
-    const stars = document.querySelector(".stars-bg");
+    const stars = document.querySelector(".stars-bg") as HTMLElement;
     if (!stars) return;
 
     const createStar = () => {
