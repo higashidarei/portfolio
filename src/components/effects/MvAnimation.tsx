@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -72,7 +73,7 @@ export default function MvAnimation() {
         </p>
 
         <div className="mv__item" ref={itemRef}>
-          <img src="./images/mv-item.png" alt="" />
+          <Image src="./images/mv-item.png" alt="" />
         </div>
       </div>
     </div>
