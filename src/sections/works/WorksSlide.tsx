@@ -2,17 +2,15 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 export default function WorksSlide() {
   const wrapperRef = useRef(null);
   const listRef = useRef(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const wrapper = wrapperRef.current;
     const list = listRef.current;
-
-    // if (!wrapper || !list) return;
 
     gsap.to(list, {
       x: () => -(list.clientWidth - wrapper.clientWidth),
@@ -30,6 +28,12 @@ export default function WorksSlide() {
       },
     });
 
+    ScrollTrigger.create({
+      trigger: ".contact",
+      start: "top center-=100",
+      end: "bottom bottom-=50",
+      toggleClass: { targets: "body", className: "colored" }
+    });
   }, []);
 
   return (

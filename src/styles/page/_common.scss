@@ -10,6 +10,11 @@ body {
   visibility: hidden;
 }
 
+body.colored{
+  background: #000000;
+  transition: background 1s all;
+}
+
 .stars-bg {
   position: fixed;
   top: 0;

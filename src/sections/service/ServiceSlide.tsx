@@ -50,7 +50,7 @@ export default function ServiceSlide() {
       start: "top top",
       end: `+=${window.innerHeight * (slides.length - 1)}`,
       scrub: true,
-      markers:true,
+      // markers:true,
       onUpdate: (self) => {
         const rawIndex = self.progress * slides.length;
         const index = Math.min(Math.floor(rawIndex), slides.length - 1);

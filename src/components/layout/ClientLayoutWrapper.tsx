@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
 export default function ClientLayoutWrapper({ children }: { children: ReactNode }) {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>{children}</main>
       {/* <Footer /> */}
     </>

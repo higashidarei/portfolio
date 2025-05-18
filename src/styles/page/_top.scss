@@ -30,7 +30,7 @@ main {
 
 .service {
 	position: relative;
-	padding: 20rem 0 0;
+	padding: 15rem 0 0;
 
 	.service-pin-wrapper {
 		position: relative;
@@ -70,7 +70,7 @@ main {
 
 
 .works {
-	padding: 0 0 10rem 0;
+	padding: 10rem 0;
 
 	&__wrap {
 		display: flex;
@@ -88,7 +88,7 @@ main {
 		display: flex;
 		gap: 4rem;
 		width: max-content;
-		margin-top: 4rem;
+		margin-top: 10rem;
 
 		li {
 			width: 30vw;

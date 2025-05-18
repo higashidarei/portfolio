@@ -1,22 +1,86 @@
 @charset "utf-8";
 
-@use '../lib/global' as g;
+@use '../lib/global'as g;
 
 .header {
-  // 削除してください
-  background: #333;
-  height: 8rem;
-  // 削除してください
-
-  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6rem;
+  position: fixed;
   z-index: 999;
+
+  &__logo{
+    font-size: 2rem;
+  }
+
   &__hmbbtn {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(0, -50%);
+    position: relative;
+    width: 5rem;
+    height: 3rem;
+    cursor: pointer;
+    margin: 1rem 0;
+
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 4px;
+      display: inline-block;
+      transition: all .5s;
+      box-sizing: border-box;
+
+      &:nth-of-type(1) {
+        top: 0;
+
+      }
+      &:nth-of-type(2) {
+       top: 50%;
+      }
+      &:nth-of-type(3) {
+        top: 100%;
+      }
+
+    }
+
+    &::after{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      content: '';
+      width: 30px;
+      height: 30px;
+      margin: -16px 0 0 -16px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.3);
+      transition: all .1s;
+      opacity: 0;
+
+    }
+    &.active::after{
+      animation: hmbCircle .5s;
+    }
   }
 }
+
+@keyframes hmbCircle {
+  0% {
+    transform: scale(.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
 .header--clone {
   position: fixed;
   top: 0;
@@ -24,9 +88,11 @@
   width: 100%;
   transform: translateY(0%);
   transition: 0.25s;
+
   &.hidden {
     transform: translateY(-100%);
   }
+
   &.is-top {
     transform: translateY(-100%) !important;
   }

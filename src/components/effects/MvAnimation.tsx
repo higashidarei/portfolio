@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HoverDistortWrapper from "@/components/effects/HoverDistortWrapper";
 
 export default function MvAnimation() {
   const h1Ref = useRef(null);
@@ -73,11 +72,9 @@ export default function MvAnimation() {
           Portfolio
         </p>
 
-        <HoverDistortWrapper>
-          <div className="mv__item" style={{ width: 300, height: 300 }}>
-            <img src="/images/mv-item.png" width={300} height={300} crossOrigin="anonymous" />
-          </div>
-        </HoverDistortWrapper>
+        <div className="mv__item" ref={itemRef}>
+          <Image src="/images/mv-item.png" alt="" width={500} height={500} />
+        </div>
       </div>
     </div>
   );
