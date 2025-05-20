@@ -1,4 +1,5 @@
 import MvAnimation from "@/components/effects/MvAnimation";
+import ContactIcon from "@/components/effects/ContactIcon";
 import ServiceSlide from "@/sections/service/ServiceSlide";
 import WorksSlide from "@/sections/works/WorksSlide";
 
@@ -30,7 +31,7 @@ export default function HomePage() {
       <section className="contact">
         <div className="contact__scroll-border"></div>
         <p className="contact__scroll-txt">Click Here</p>
-        <h2 className="contact__ttl"><a href="/contact" data-transition>Contact</a></h2>
+        <ContactIcon />
       </section>
     </>
   );
