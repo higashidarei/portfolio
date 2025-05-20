@@ -41,6 +41,7 @@ main {
 	&__list {
 		position: relative;
 		height: 100%;
+		width: 60%;
 	}
 
 	&__item {
@@ -60,12 +61,41 @@ main {
 		}
 	}
 
+	&__wrap{
+		display: flex;
+		gap: 5rem;
+	}
+
 	.dot {
 		width: 20px;
 		height: 20px;
-		background: #fff;
+		background: #ffffffda;
 		border-radius: 50%;
 		position: absolute;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 5px solid transparent;
+			border-top-color: hsl(58, 100%, 62%);
+			border-radius: 50%;
+			box-sizing: border-box;
+			animation: rotateBorder 2s linear infinite;
+		}
+		span{
+			position: absolute;
+			transform: translate(-50%,-50%);
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			color: #000;
+			font-weight: bold;
+			text-align: center;
+		}
 	}
 }
 
@@ -196,4 +226,12 @@ main {
 		bottom: -10px;
 		opacity: 0;
 	}
+}
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

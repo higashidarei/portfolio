@@ -71,25 +71,25 @@ export default function ServiceSlide() {
   return (
     <div className="service-pin-wrapper" ref={wrapperRef}>
       <h2 className="heading-A">Service</h2>
-      <ul className="service__list">
-        {slides.map((s, i) => (
-          <li
-            className="service__item"
-            key={i}
-            ref={(el) => {
-              if (el) slidesRef.current[i] = el;
-            }}
-          >
-            <div>
-              <h3>{s.title}</h3>
-              <p>{s.content}</p>
-            </div>
-            <div>
-              <MotionPath />
-            </div>
-          </li>
-        ))}
-      </ul>
+      <div className="service__wrap">
+        <ul className="service__list">
+          {slides.map((s, i) => (
+            <li
+              className="service__item"
+              key={i}
+              ref={(el) => {
+                if (el) slidesRef.current[i] = el;
+              }}
+            >
+              <div>
+                <h3>{s.title}</h3>
+                <p>{s.content}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <MotionPath />
+      </div>
     </div>
   );
 }

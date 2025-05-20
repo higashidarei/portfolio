@@ -52,7 +52,7 @@ export default function ContactIcon() {
     trigger.addEventListener('mousemove', handleMouseMove);
 
     trigger.addEventListener('mouseenter', () => {
-      intervalId = window.setInterval(spawnIcon, 700);
+      intervalId = window.setInterval(spawnIcon, 500);
     });
 
     trigger.addEventListener('mouseleave', () => {
