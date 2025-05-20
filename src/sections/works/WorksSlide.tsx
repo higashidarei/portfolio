@@ -30,7 +30,7 @@ export default function WorksSlide() {
 
     ScrollTrigger.create({
       trigger: ".contact",
-      start: "top center-=100",
+      start: "top center",
       end: "bottom bottom-=50",
       toggleClass: { targets: "body", className: "colored" }
     });
