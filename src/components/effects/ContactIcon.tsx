@@ -38,10 +38,10 @@ export default function ContactIcon() {
         motionPath: {
           path: [
             { x: 0, y: 0 },// 開始点
-            { x: 40, y: 10 },// 少し右
-            { x: 60, y: 50 }// 最終点（右下）
+            { x: 200, y: 40 },// 少し右
+            { x: 230, y: 100 }// 最終点（右下）
           ],
-          curviness: 1.5,
+          curviness: 2,
           autoRotate: false
         },
         opacity: 0,
@@ -52,7 +52,7 @@ export default function ContactIcon() {
     trigger.addEventListener('mousemove', handleMouseMove);
 
     trigger.addEventListener('mouseenter', () => {
-      intervalId = window.setInterval(spawnIcon, 800);
+      intervalId = window.setInterval(spawnIcon, 700);
     });
 
     trigger.addEventListener('mouseleave', () => {
