@@ -1,38 +1,18 @@
-import MvAnimation from "@/components/effects/MvAnimation";
-import ContactIcon from "@/components/effects/ContactIcon";
-import ServiceSlide from "@/sections/service/ServiceSlide";
-import WorksSlide from "@/sections/works/WorksSlide";
+import MvSection from "@/sections/mv/MvSection";
+import ServiceSection from "@/sections/service/ServiceSection";
+import WorksSection from "@/sections/works/WorksSection";
+import ContactSection from "@/sections/contact/ContactSection";
 
 export default function HomePage() {
   return (
     <>
-      <div className="stars-bg"></div>
-      <div className="mv">
-        <div className="l-inner">
-          <MvAnimation />
-        </div>
-      </div>
+      <MvSection />
 
-      <section className="service">
-        <div className="l-inner">
-          <ServiceSlide />
-        </div>
-      </section>
+      <ServiceSection />
 
-      <div className="service-spacer" />
+      <WorksSection />
 
-      <section className="works">
-        <div className="l-inner">
-          <h2 className="heading-A">Works</h2>
-          <WorksSlide />
-        </div>
-      </section>
-
-      <section className="contact">
-        <div className="contact__scroll-border"></div>
-        <p className="contact__scroll-txt">Click Here</p>
-        <ContactIcon />
-      </section>
+      <ContactSection />
     </>
   );
 }

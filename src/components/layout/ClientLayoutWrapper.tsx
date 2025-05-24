@@ -7,6 +7,7 @@ import type { ReactNode } from "react";
 export default function ClientLayoutWrapper({ children }: { children: ReactNode }) {
   return (
     <>
+      <div className="stars-bg"></div>
       <Header />
       <main>{children}</main>
       {/* <Footer /> */}
